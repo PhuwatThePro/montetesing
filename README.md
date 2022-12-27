@@ -1,4 +1,4 @@
 # montetesing
 Ampion games
 
-[Ampion games](/montetesing/ampiongamestetris)
+[Ampion games](/montetesting/ampiongamestetris)
