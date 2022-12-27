@@ -1,4 +1,4 @@
 # montetesing
-Ampion games
+## Ampion games
 
-#### [CLick here to play!](/montetesting/ampiongamestetris)
+### [CLick here to play!](/montetesting/ampiongamestetris)
