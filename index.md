@@ -7,4 +7,6 @@
 
 ## [Monte's password](/montetesting/ayyosecrets)
 
-## [Password Testing](/montetesting/password1)
+## Monte's password testing
+
+## [Password Testing(password = ampion1234)](/montetesting/password1)
