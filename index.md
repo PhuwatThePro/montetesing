@@ -9,7 +9,7 @@
 |Monte's pasword testing|[Password Testing(password = ampion1234)](/montetesting/password1)|
 |Monte's secret password|[Monte's password](/montetesting/ayyosecrets)                     |
 |Monte's Ampion game    |[CLick here to play!](/montetesting/ampiongamestetris)            |
-|Monte's hax song       |[Click here to listen Hax song](/montetesting/playhaxsong)        |
+|Monte's hax song       |[Click here to listen Hax song](/montetesting/Haxsong.mp3)        |
 |ampion staff panelmodel|[staff panel model](/montetesting/ampionwebstaffpaneltesting)     |
  
  ## Read!1!1!1!1
