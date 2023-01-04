@@ -1,0 +1,38 @@
+<!-- Create a container for the buttons -->
+<div id="button-container"></div>
+
+<!-- Add some JavaScript to create the buttons -->
+<script>
+  // Get a reference to the button container
+  var container = document.getElementById('button-container');
+  
+  // Create an array of button labels
+  var labels = [
+    'Button 1',
+    'Button 2',
+    'Button 3',
+    'Button 4',
+    'Button 5',
+    'Button 6',
+    'Button 7',
+    'Button 8',
+    'Button 9',
+    'Button 10',
+    'Button 11',
+    'Button 12',
+    'Button 13',
+    'Button 14',
+    'Button 15',
+    
+  ];
+  
+  // Shuffle the array of labels
+  labels.sort(function() { return 0.5 - Math.random() });
+  
+  // Create the buttons
+  for (var i = 0; i < labels.length; i++) {
+    var button = document.createElement('button');
+    button.innerHTML = labels[i];
+    container.appendChild(button);
+  }
+</script>
