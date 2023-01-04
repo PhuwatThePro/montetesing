@@ -1,0 +1,10 @@
+/* Add GG Ampion Font */
+
+@font-face {
+    font-family: ggampion;
+    src: url(https://phuwatthepro.github.io/montetesting/gg_ampion-v1.ttf);
+}
+
+body {
+    font-family: ggampion;
+}
