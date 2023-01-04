@@ -4,17 +4,15 @@
 
 | Monte Testing         |   Click these blue text below to visit!                          |
 |-----------------------|------------------------------------------------------------------|
-|monte's comment testing|[monte's comment testing](/montetesting/commenttesting1.HTML)     |
 |Monte's dunno    🤔     |[Click here to I dunno](/montetesting/idunno)                     |
-|Monte's pasword testing|[Password Testing(password = ampion1234)](/montetesting/password1)|
 |Monte's secret password|[Monte's password](/montetesting/ayyosecrets)                     |
 |Monte's Ampion game 👾🎮 |[CLick here to play!](/montetesting/ampiongamestetris)            |
 |Monte's hax song  🎶🎵   |[Click here to listen Hax song](/montetesting/Haxsong.mp3)        |
-|ampion staff panelmodel| ampion website staff panel model (closed)                        |
 |Monte's canva beta 🌃🏞️ |[Monte's Canva](/montetesting/montecanva1)                        |
 |random button!   ▫️▫️▫️   |[Random Button](/montetesting/randombuttons)                      |
 |Monte Click It!  ⚫️👈    |[Monte Click It!](/montetesting/monteclickitgame)                 |
-|                       |                                                                  |
+|Monte drawing simulator|[Monte's Drawing Simulator!](/montetesting/montedrawingsimulator) |                                                              
+|-----------------------|------------------------------------------------------------------|
 
 ## Read!1!1!1!1
  - this website is just a testing so plz understand that it might have some issue
