@@ -13,6 +13,7 @@
 |ampion staff panelmodel| ampion website staff panel model (closed)                        |
 |Monte's canva beta 🌃🏞️ |[Monte's Canva](/montetesting/montecanva1)                        |
 |random button!   ▫️▫️▫️   |[Random Button](/montetesting/randombuttons)                      |
+|Monte Click It!        |[Monte Click It!](/montetesting/monteclickitgame)                 |
 
 ## Read!1!1!1!1
  - this website is just a testing so plz understand that it might have some issue
