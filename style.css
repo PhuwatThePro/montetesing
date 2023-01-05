@@ -7,8 +7,27 @@
 
 body {
     font-family: ggampion;
-    font-size: 120%;
 }
+
+/* Font styling */
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+p {
+  font-size: 1.25em; 
+}
+
+/* Link coloring */
 
 a:link {
   color: blue;
