@@ -1,46 +1,25 @@
 /* Add GG Ampion Font */
 
-@font-face {
-    font-family: ggampion;
-    src: url(https://phuwatthepro.github.io/montetesting/gg_ampion-v1.ttf);
-}
+@font-face {font-family: ggampion; src: url(https://phuwatthepro.github.io/montetesting/gg_ampion-v1.ttf);}
 
-body {
-    font-family: ggampion;
-}
+body {font-family: ggampion;}
 
 /* Font styling */
 
-h1 {
-  font-size: 3em;
-}
+h1 {font-size: 3em;}
 
-h2 {
-  font-size: 2.25em;
-}
+h2 {font-size: 2.25em;}
 
-h3 {
-  font-size: 1.75em;
-}
+h3 {font-size: 1.75em;}
 
-p {
-  font-size: 1.25em; 
-}
+p {font-size: 1.25em;}
 
 /* Link coloring */
 
-a:link {
-  color: blue;
-}
+a:link {color: blue;}
 
-a:visited {
-  color: blue;
-}
+a:visited {color: blue;}
 
-a:hover {
-  color: blue;
-}
+a:hover {color: blue;}
 
-a:active {
-  color: blue;
-}
+a:active {color: blue;}
