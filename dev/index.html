@@ -11,13 +11,11 @@
 
     <script>
       function checkPassword() {
-        // Replace 'correctPassword' with the actual password
         const correctPassword = 'abc123';
         const userInput = document.getElementById('pwd').value;
         if (userInput === correctPassword) {
           window.location.href = '/montetesting/dev/devonly';
         } else {
-          // Password is incorrect. Display an error message
           alert('Incorrect password. Please try again.');
         }
       }
