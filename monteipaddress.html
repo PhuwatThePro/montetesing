@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Website View Counter</title>
+  <title>IP Address Display</title>
   <h1>Monte IP address!</h1>
   <h1>your ip address</h1>
 </head>
 <body>
-  <div id="your-IP-address"></div>
+  <div id="ip-address"></div>
   <script>
     fetch('https://api.ipify.org?format=json')
-  .then(response => response.json())
-  .then(data => {
-    const ip = data.ip;
-    console.log(`Your IP address is: ${ip}`);
-  });
+      .then(response => response.json())
+      .then(data => {
+        const ip = data.ip;
+        document.getElementById('ip-address').innerHTML = `Your IP address is: ${ip}`;
+      });
   </script>
 </body>
 </html>
+
