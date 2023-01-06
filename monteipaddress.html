@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website View Counter</title>
+  <h1>Monte Testing Website</h1>
+  <h1>views</h1>
+</head>
+<body>
+  <div id="view-count"></div>
+  <script>
+    fetch('https://api.ipify.org?format=json')
+  .then(response => response.json())
+  .then(data => {
+    const ip = data.ip;
+    console.log(`Your IP address is: ${ip}`);
+  });
+  </script>
+</body>
+</html>
