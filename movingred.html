@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Moving Red</title>
+    <h1>Monte's Moving Red</h1>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script>
+      let canvas = document.getElementById("canvas");
+      let context = canvas.getContext("2d");
+      let x = 0;
+      let y = 0;
+      let speed = 5;
+      let direction = "right";
+
+      function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = "red";
+        context.fillRect(x, y, 50, 50);
+      }
+
+      function update() {
+        if (direction == "right") {
+          x += speed;
+        } else {
+          x -= speed;
+        }
+        if (x > canvas.width) {
+          direction = "left";
+        }
+        if (x < 0) {
+          direction = "right";
+        }
+      }
+
+      function loop() {
+        draw();
+        update();
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+    </script>
+  </body>
+</html>
+
