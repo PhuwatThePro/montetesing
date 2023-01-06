@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Password Protected Page</title>
+  </head>
+  <body>
+    <h1>Enter the Password to Access this Page</h1>
+    <form>
+      <input type="password" id="pwd">
+      <button type="submit" onclick="checkPassword()">Submit</button>
+    </form>
+
+    <script>
+      function checkPassword() {
+        // Replace 'correctPassword' with the actual password
+        const correctPassword = 'abc123';
+        const userInput = document.getElementById('pwd').value;
+        if (userInput === correctPassword) {
+          // Password is correct. Access granted.
+          // You can redirect the user to the main content of the page here
+          window.location.href = 'main-content.html';
+        } else {
+          // Password is incorrect. Display an error message
+          alert('Incorrect password. Please try again.');
+        }
+      }
+    </script>
+  </body>
+</html>
