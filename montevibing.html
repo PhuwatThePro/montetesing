@@ -11,6 +11,10 @@
       const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
       document.body.style.backgroundColor = randomColor;
     }, 1000);
+    <audio id="song" src="http://example.com/song.mp3" loop></audio>
+
+<button onclick="document.getElementById('song').play()">Play</button>
+<button onclick="document.getElementById('song').pause()">Pause</button>
   </script>
 </body>
 </html>
