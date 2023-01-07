@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Number Guessing Game</title>
+  </head>
+  <body>
+    <h1> Monte's Number Guessing Game</h1>
+    <p>Guess a number between 1 and 10:</p>
+    <input type="text" id="guess">
+    <button id="button">Guess</button>
+    <p id="result"></p>
+
+    <script>
+      const button = document.getElementById("button");
+      const result = document.getElementById("result");
+
+      button.addEventListener("click", function() {
+        const guess = document.getElementById("guess").value;
+        const number = Math.floor(Math.random() * 10) + 1;
+        if (guess == number) {
+          result.textContent = "Correct!";
+        } else {
+          result.textContent = `Wrong! The correct number was ${number}.`;
+        }
+      });
+    </script>
+  </body>
+</html>
