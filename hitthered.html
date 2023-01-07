@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>Target Practice</title>
+    <style>
+      #target {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Monte's Hit The Red</h1>
+    <h3>hit the red thingy to earn a score!</h3>
+    <p>Hits: <span id="hits">0</span></p>
+    <p>Misses: <span id="misses">0</span></p>
+    <div id="target"></div>
+
+    <script>
+      const target = document.getElementById("target");
+      const hits = document.getElementById("hits");
+      const misses = document.getElementById("misses");
+
+      let targetX = Math.floor(Math.random() * window.innerWidth);
+      let targetY = Math.floor(Math.random() * window.innerHeight);
+      target.style.left = `${targetX}px`;
+      target.style.top = `${targetY}px`;
+
+      // Get the hits and misses counters from localStorage
+      let hitsCount = localStorage.getItem("hitsCount");
+      if (hitsCount == null) {
+        hitsCount = 0;
+      }
+      hits.textContent = hitsCount;
+
+      let missesCount = localStorage.getItem("missesCount");
+      if (missesCount == null) {
+        missesCount = 0;
+      }
+      misses.textContent = missesCount;
+
+      target.addEventListener("click", function() {
+        hitsCount++;
+        hits.textContent = hitsCount;
+        localStorage.setItem("hitsCount", hitsCount);
+        targetX = Math.floor(Math.random() * window.innerWidth);
+        targetY = Math.floor(Math.random() * window.innerHeight);
+        target.style.left = `${targetX}px`;
+        target.style.top = `${targetY}px`;
+      });
+
+      window.addEventListener("click", function(event) {
+        if (event.target != target) {
+          missesCount++;
+          misses.textContent = missesCount;
+          localStorage.setItem("missesCount", missesCount);
+        }
+      });
+    </script>
+  </body>
+</html>
