@@ -1,54 +1,88 @@
+<!DOCTYPE html>
 <html>
   <link rel="stylesheet" href="style.css">
   <head>
-    <title>Memory Game</title>
     <style>
-      .tile {
-        width: 100px;
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .choices {
+        display: flex;
+      }
+      .choice {
         height: 100px;
-        background-color: gray;
+        width: 100px;
         border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      .choice:hover {
+        background-color: lightgray;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 24px;
+      }
+      .scores {
+        margin-top: 20px;
+        font-size: 18px;
       }
     </style>
   </head>
   <body>
-    <h1>Monte's Memory Matching Game!</h1>
-    <p>Click on two tiles to reveal what is hidden behind them. Try to find all the matching pairs to win the game.</p>
-    <a href="./">Go Back To Home Page</a>
-    <div id="grid"></div>
-
-   
+    <div class="container">
+      <div class="choices">
+        <div class="choice" onclick="play('rock')">
+          Rock
+        </div>
+        <div class="choice" onclick="play('paper')">
+          Paper
+        </div>
+        <div class="choice" onclick="play('scissors')">
+          Scissors
+        </div>
+      </div>
+      <div class="result">
+        Make a selection to play.
+      </div>
+      <div class="scores">
+        Wins: <span id="wins">0</span> Losses: <span id="losses">0</span> Ties: <span id="ties">0</span>
+      </div>
+    </div>
     <script>
-      const grid = document.getElementById("grid");
-      const tiles = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H"];
+      let wins = 0;
+      let losses = 0;
+      let ties = 0;
 
-      // Shuffle the tiles
-      for (let i = tiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
-      }
+      function play(userChoice) {
+        const choices = ['rock', 'paper', 'scissors'];
+        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-      // Create the tiles and add them to the grid
-      for (const tile of tiles) {
-        const div = document.createElement("div");
-        div.classList.add("tile");
-        div.addEventListener("click", function() {
-          if (div.textContent == "") {
-            div.textContent = tile;
-            const matchingTile = document.querySelector(`.tile:not([textContent])`);
-            if (matchingTile) {
-              if (matchingTile.textContent == tile) {
-                matchingTile.textContent = tile;
-              } else {
-                setTimeout(function() {
-                  div.textContent = "";
-                  matchingTile.textContent = "";
-                }, 1000);
-              }
-            }
-          }
-        });
-        grid.appendChild(div);
+        let result;
+        if (userChoice === computerChoice) {
+          result = 'Tie';
+          ties++;
+        } else if (
+          (userChoice === 'rock' && computerChoice === 'scissors') ||
+          (userChoice === 'paper' && computerChoice === 'rock') ||
+          (userChoice === 'scissors' && computerChoice === 'paper')
+        ) {
+          result = 'Win';
+          wins++;
+        } else {
+          result = 'Loss';
+          losses++;
+        }
+
+        document.querySelector('.result').innerHTML = `You chose ${userChoice}, the computer chose ${computerChoice}. You ${result}!`;
+        document.querySelector('#wins').innerHTML = wins;
+        document.querySelector('#losses').innerHTML = losses;
+        document.querySelector('#ties').innerHTML = ties;
       }
     </script>
   </body>
