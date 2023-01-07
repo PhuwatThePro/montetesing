@@ -1,0 +1,55 @@
+<html>
+  <link rel="stylesheet" href="style.css">
+  <head>
+    <title>Memory Game</title>
+    <style>
+      .tile {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Monte's Memory Matching Game!</h1>
+    <p>Click on two tiles to reveal what is hidden behind them. Try to find all the matching pairs to win the game.</p>
+    <a href="./">Go Back To Home Page</a>
+    <div id="grid"></div>
+
+   
+    <script>
+      const grid = document.getElementById("grid");
+      const tiles = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H"];
+
+      // Shuffle the tiles
+      for (let i = tiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+      }
+
+      // Create the tiles and add them to the grid
+      for (const tile of tiles) {
+        const div = document.createElement("div");
+        div.classList.add("tile");
+        div.addEventListener("click", function() {
+          if (div.textContent == "") {
+            div.textContent = tile;
+            const matchingTile = document.querySelector(`.tile:not([textContent])`);
+            if (matchingTile) {
+              if (matchingTile.textContent == tile) {
+                matchingTile.textContent = tile;
+              } else {
+                setTimeout(function() {
+                  div.textContent = "";
+                  matchingTile.textContent = "";
+                }, 1000);
+              }
+            }
+          }
+        });
+        grid.appendChild(div);
+      }
+    </script>
+  </body>
+</html>
