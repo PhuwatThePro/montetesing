@@ -136,3 +136,10 @@ canvas {
 #ip-address {
       text-align: center;
     }
+body {
+        margin: 0;
+        padding: 0;
+      }
+      canvasred {
+        display: block;
+      }
