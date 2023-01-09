@@ -154,3 +154,14 @@ body {
         margin: auto;
         display: block;
       }
+      .choice {
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: white;
+      }
