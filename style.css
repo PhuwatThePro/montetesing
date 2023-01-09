@@ -133,3 +133,6 @@ canvas {
         margin: auto;
         display: block;
       }
+#ip-address {
+      text-align: center;
+    }
