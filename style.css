@@ -64,3 +64,24 @@ a:active {color: blue;}
       background-size: cover;
       background-repeat: repeat-y;
       }
+      h2 {
+      text-align: center;
+      }
+       td {
+      text-align: center;
+      }
+       tr {
+      text-align: center;
+      }
+       th {
+      text-align: center;
+      }
+       h3 {
+      text-align: center;
+      }
+       ul {
+      text-align: center;
+      }
+       li {
+      text-align: center;
+
