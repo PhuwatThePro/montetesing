@@ -89,8 +89,8 @@ a:active {color: blue;}
 position: absolute; 
 width: 50px;
  height: 50px;
- background-color: red
-; border-radius: 50%;
+ background-color: red; 
+ border-radius: 50%;
  }
 #circle { 
 width: 100px; height:
