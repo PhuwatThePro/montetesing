@@ -172,14 +172,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 400%;
     height: 1000%;
     z-index: -2;
 }
 .content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 100%;
+    left: 100%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 1;
