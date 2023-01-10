@@ -4,10 +4,11 @@
     <title>Monte Central</title>
   </head>
   <body>
-    <div class="square2"></div>
-    <div class="center">
-      <div class="square">
-    <h1 id="montetesing">Monte Central (early access)</h1>
+    <div class="square2" />
+    <div class="center" />
+    <div class="square" />
+    <h1 id="montetesing">Monte Central</h1>
+    <h3 id="server"></h3>
     <h2 id="hello-welcome-to-monte-testing-website-">Hello, Welcome to the Monte Central Website!</h2>
 
     <table>
@@ -116,4 +117,14 @@
       <li>Visit <a href="https://ampion.tk">ampion.tk</a> now</li>
     </ul>
   </body>
+  
+  <script>
+    switch (window.location.hostname) {
+      case "montecentral.github.io":
+        document.getElementById("server").innerHTML = "Official Monte Central Server";
+      case "phuwtthepro.github.io":
+        document.getElementById("server").innerHTML = "Early Access Server";
+      default:
+        document.getElementById("server").innerHTML = "Unverified Server, please use montecentral.github.io instead.";
+    }
 </html>
