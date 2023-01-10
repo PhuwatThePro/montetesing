@@ -43,15 +43,20 @@
       var clicks1 = 0;
       var clicks2 = 0;
 
-      circle1.addEventListener("click", function() {
+circle1.addEventListener("touchstart", function(e) {
+    if(e.touches.length>1) {
         clicks1++;
         counter1.innerHTML = clicks1;
-      });
-      
-      circle2.addEventListener("click", function() {
+    }
+});
+
+circle2.addEventListener("touchstart", function(e) {
+    if(e.touches.length>1) {
         clicks2++;
         counter2.innerHTML = clicks2;
-      });
+    }
+});
+
       
       function startTimer() {
         var time = 30;
