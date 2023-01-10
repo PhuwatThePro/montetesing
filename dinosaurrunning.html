@@ -11,35 +11,31 @@
         width: 50px;
         height: 50px;
         border-radius: 25px;
-        background-color: red;
+        background-color: blue;
         position: absolute;
       }
       
-      #square {
-        /* Add some style to the square */
+      .square {
+        /* Add some style to the squares */
         width: 50px;
         height: 50px;
-        background-color: green;
+        background-color: red;
         position: absolute;
       }
     </style>
   </head>
   <body>
     <div id="circle"></div>
-    <div id="square"></div>
     
     <script>
-      // Get the circle and square elements
+      // Get the circle element
       var circle = document.getElementById('circle');
-      var square = document.getElementById('square');
       
-      // Set the initial position of the circle and square
+      // Set the initial position of the circle
       circle.style.left = '50px';
       circle.style.top = '50px';
-      square.style.left = '100px';
-      square.style.top = '0px';
       
-      // Set the movement speed of the square
+      // Set the movement speed of the squares
       var speed = 5;
       
       // Set the game over flag to false
@@ -52,18 +48,28 @@
           return;
         }
         
-        // Update the position of the square
-        var x = parseInt(square.style.left);
-        square.style.left = (x + speed) + 'px';
+        // Create a new square and add it to the page
+        var square = document.createElement('div');
+        square.classList.add('square');
+        square.style.left = '0px';
+        square.style.top = Math.random() * window.innerHeight + 'px';
+        document.body.appendChild(square);
         
-        // Check if the square has hit the circle
-        var x1 = parseInt(circle.style.left);
-        var y1 = parseInt(circle.style.top);
-        var x2 = x;
-        var y2 = parseInt(square.style.top);
-        if (Math.abs(x1 - x2) < 50 && Math.abs(y1 - y2) < 50) {
-          gameOver = true;
-          alert('Game over!');
+        // Move the squares across the page
+        var squares = document.getElementsByClassName('square');
+        for (var i = 0; i < squares.length; i++) {
+          var x = parseInt(squares[i].style.left);
+          squares[i].style.left = (x + speed) + 'px';
+          
+          // Check if the square has hit the circle
+          var x1 = parseInt(circle.style.left);
+          var y1 = parseInt(circle.style.top);
+          var x2 = x;
+          var y2 = parseInt(squares[i].style.top);
+          if (Math.abs(x1 - x2) < 50 && Math.abs(y1 - y2) < 50) {
+            gameOver = true;
+            alert('Game over!');
+          }
         }
       }, 10);
       
@@ -76,3 +82,4 @@
     </script>
   </body>
 </html>
+
