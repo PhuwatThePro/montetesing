@@ -43,17 +43,15 @@
       var clicks1 = 0;
       var clicks2 = 0;
 
-circle1.addEventListener("touchstart", function() {
+      circle1.addEventListener("click", function() {
         clicks1++;
         counter1.innerHTML = clicks1;
-    }
-});
-
-circle2.addEventListener("touchstart", function() {
+      });
+      
+      circle2.addEventListener("click", function() {
         clicks2++;
         counter2.innerHTML = clicks2;
-    }
-});
+      });
 
       
       function startTimer() {
