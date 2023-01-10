@@ -43,15 +43,13 @@
       var clicks1 = 0;
       var clicks2 = 0;
 
-circle1.addEventListener("touchstart", function(e) {
-    if(e.touches.length>1) {
+circle1.addEventListener("touchstart", function() {
         clicks1++;
         counter1.innerHTML = clicks1;
     }
 });
 
-circle2.addEventListener("touchstart", function(e) {
-    if(e.touches.length>1) {
+circle2.addEventListener("touchstart", function() {
         clicks2++;
         counter2.innerHTML = clicks2;
     }
