@@ -8,7 +8,7 @@
     <div class="center" />
     <div class="square" />
     <h1 id="montetesing">Monte Central</h1>
-    <h3 id="server"></h3>
+    <h3 id="server">Identifying Server...</h3>
     <h2 id="hello-welcome-to-monte-testing-website-">Hello, Welcome to the Monte Central Website!</h2>
 
     <table>
@@ -121,10 +121,11 @@
   <script>
     switch (window.location.hostname) {
       case "montecentral.github.io":
-        document.getElementById("server").innerHTML = "Official Monte Central Server";
+        document.getElementById("server").innerHTML = "Main Server";
       case "phuwtthepro.github.io":
         document.getElementById("server").innerHTML = "Early Access Server";
       default:
         document.getElementById("server").innerHTML = "Unverified Server, please use montecentral.github.io instead.";
     }
+  </script>
 </html>
