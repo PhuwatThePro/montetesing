@@ -165,25 +165,19 @@ body {
         cursor: pointer;
         background-color: white;
       }
-body {
-    position: relative;
+.textbox {
+  position: relative;
+  z-index: -1;
 }
-.textbox{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 400%;
-    height: 1000%;
-    z-index: -2;
+
+img.textbox {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
 .content {
-    position: absolute;
-    top: 100%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 1;
-}
-.inner-content{
-    text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
 }
