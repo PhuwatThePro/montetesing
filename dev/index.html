@@ -1,24 +1,14 @@
 <html>
   <link rel="stylesheet" href="style.css">
-  <head>
-    <title>Password Protected Page</title>
-  </head>
-  <body>
-    <h1>Enter the Password to Access this Page</h1>
-    <form>
-      <input type="password" id="pwd">
-      <button type="submit" onclick="checkPassword()">Submit</button>
-    </form>
-    <script>
-      function checkPassword() {
-        const correctPassword = 'abc123';
-        const userInput = document.getElementById('pwd').value;
-        if (userInput === correctPassword) {
-          window.location.href = 'https://phuwatthepro.github.io/montetesting/dev/devonly';
-        } else {
-          alert('Incorrect password. Please try again.');
+  
+  <button onclick="checkInput()">Click me</button>
+
+<script>
+    function checkInput() {
+        var input = prompt("Please enter the word:");
+        if (input == "champion") {
+            window.location.href = "https://www.example.com";
         }
-      }
-    </script>
-  </body>
+    }
+</script>
 </html>
