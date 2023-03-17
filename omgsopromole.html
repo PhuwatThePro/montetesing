@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Whack-a-Mole</title>
+    <style>
+      #game-board {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 500px;
+        margin: auto;
+      }
+      .hole {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-image: url('hole.png');
+        background-size: 100px;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      .mole {
+        width: 100px;
+        height: 100px;
+        background-image: url('mole.png');
+        background-size: 100px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 0;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-board">
+      <div class="hole" id="0"><div class="mole"></div></div>
+      <div class="hole" id="1"><div class="mole"></div></div>
+      <div class="hole" id="2"><div class="mole"></div></div>
+      <div class="hole" id="3"><div class="mole"></div></div>
+      <div class="hole" id="4"><div class="mole"></div></div>
+      <div class="hole" id="5"><div class="mole"></div></div>
+      <div class="hole" id="6"><div class="mole"></div></div>
+      <div class="hole" id="7"><div class="mole"></div></div>
+      <div class="hole" id="8"><div class="mole"></div></div>
+    </div>
+    <script>
+      const gameBoard = document.getElementById('game-board');
+const holes = document.querySelectorAll('.hole');
+const moles = document.querySelectorAll('.mole');
+const scoreBoard = document.createElement('div');
+let score = 0;
+
+scoreBoard.innerText = 'Score: 0';
+scoreBoard.style.textAlign = 'center';
+scoreBoard.style.fontSize = '30px';
+scoreBoard.style.marginTop = '50px';
+
+function getRandomTime(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function getRandomHole() {
+  const index = Math.floor(Math.random() * holes.length);
+  return holes[index];
+}
+
+function showMole() {
+  const hole = getRandomHole();
+  hole.querySelector('.mole').style.display = 'block';
+  const time = getRandomTime(500, 1500);
+  setTimeout(() => {
+    hole.querySelector('.mole').style.display = 'none';
+    if (score >= 10) {
+      alert('You win!');
+      score = 0;
+      scoreBoard.innerText = 'Score: 0';
+    } else {
+      showMole();
+    }
+  }, time);
+}
+
+function bonkMole(e) {
+  if (e.target.classList.contains('mole')) {
+    score++;
+    scoreBoard.innerText = `Score: ${score}`;
+    e.target.style.display = 'none';
+  }
+}
+
+gameBoard.insertAdjacentElement('afterend', scoreBoard);
+gameBoard.addEventListener('click', bonkMole);
+
+showMole();
+
+</script>
+  </body>
+</html>
