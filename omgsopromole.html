@@ -1,99 +1,104 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Whack-a-Mole</title>
+    <title>Simon Game</title>
     <style>
       #game-board {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        width: 500px;
-        height: 500px;
+        width: 300px;
+        height: 300px;
         margin: auto;
       }
-      .hole {
+      .button {
         width: 100px;
         height: 100px;
         margin: 10px;
-        background-image: url('hole.png');
-        background-size: 100px;
-        background-repeat: no-repeat;
-        position: relative;
+        border-radius: 50%;
+        cursor: pointer;
       }
-      .mole {
-        width: 100px;
-        height: 100px;
-        background-image: url('mole.png');
-        background-size: 100px;
-        background-repeat: no-repeat;
-        position: absolute;
-        bottom: 0;
-        display: none;
+      #red {
+        background-color: red;
+      }
+      #green {
+        background-color: green;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #yellow {
+        background-color: yellow;
       }
     </style>
   </head>
   <body>
     <div id="game-board">
-      <div class="hole" id="0"><div class="mole"></div></div>
-      <div class="hole" id="1"><div class="mole"></div></div>
-      <div class="hole" id="2"><div class="mole"></div></div>
-      <div class="hole" id="3"><div class="mole"></div></div>
-      <div class="hole" id="4"><div class="mole"></div></div>
-      <div class="hole" id="5"><div class="mole"></div></div>
-      <div class="hole" id="6"><div class="mole"></div></div>
-      <div class="hole" id="7"><div class="mole"></div></div>
-      <div class="hole" id="8"><div class="mole"></div></div>
+      <div class="button" id="red"></div>
+      <div class="button" id="green"></div>
+      <div class="button" id="blue"></div>
+      <div class="button" id="yellow"></div>
     </div>
     <script>
-      const gameBoard = document.getElementById('game-board');
-const holes = document.querySelectorAll('.hole');
-const moles = document.querySelectorAll('.mole');
-const scoreBoard = document.createElement('div');
-let score = 0;
+const gameBoard = document.getElementById('game-board');
+const buttons = document.querySelectorAll('.button');
+const sounds = {
+  red: new Audio('red.mp3'),
+  green: new Audio('green.mp3'),
+  blue: new Audio('blue.mp3'),
+  yellow: new Audio('yellow.mp3'),
+};
+const sequence = [];
+let currentIndex = 0;
 
-scoreBoard.innerText = 'Score: 0';
-scoreBoard.style.textAlign = 'center';
-scoreBoard.style.fontSize = '30px';
-scoreBoard.style.marginTop = '50px';
-
-function getRandomTime(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+function getRandomButton() {
+  const index = Math.floor(Math.random() * buttons.length);
+  return buttons[index];
 }
 
-function getRandomHole() {
-  const index = Math.floor(Math.random() * holes.length);
-  return holes[index];
-}
-
-function showMole() {
-  const hole = getRandomHole();
-  hole.querySelector('.mole').style.display = 'block';
-  const time = getRandomTime(500, 1500);
+function playButton(button) {
+  button.classList.add('active');
+  sounds[button.id].play();
   setTimeout(() => {
-    hole.querySelector('.mole').style.display = 'none';
-    if (score >= 10) {
-      alert('You win!');
-      score = 0;
-      scoreBoard.innerText = 'Score: 0';
-    } else {
-      showMole();
-    }
-  }, time);
+    button.classList.remove('active');
+  }, 500);
 }
 
-function bonkMole(e) {
-  if (e.target.classList.contains('mole')) {
-    score++;
-    scoreBoard.innerText = `Score: ${score}`;
-    e.target.style.display = 'none';
+function playSequence() {
+  sequence.forEach((button, index) => {
+    setTimeout(() => {
+      playButton(button);
+    }, index * 1000);
+  });
+}
+
+function addButtonToSequence() {
+  const button = getRandomButton();
+  sequence.push(button);
+  playSequence();
+  currentIndex = 0;
+}
+
+function handleButtonClick(e) {
+  if (buttons[currentIndex] === e.target) {
+    playButton(e.target);
+    currentIndex++;
+    if (currentIndex === sequence.length) {
+      addButtonToSequence();
+    }
+  } else {
+    alert('Game over!');
+    sequence.length = 0;
+    currentIndex = 0;
   }
 }
 
-gameBoard.insertAdjacentElement('afterend', scoreBoard);
-gameBoard.addEventListener('click', bonkMole);
+buttons.forEach((button) => {
+  button.addEventListener('click', handleButtonClick);
+});
 
-showMole();
+addButtonToSequence();
 
 </script>
   </body>
